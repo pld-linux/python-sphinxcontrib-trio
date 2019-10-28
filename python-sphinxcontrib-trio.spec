@@ -7,7 +7,7 @@ Summary:	Make Sphinx better at documenting Python functions and methods
 Summary(pl.UTF-8):	Usprawnienie Sphinksa przy dokumentowaniu funkcji i method w Pythonie
 Name:		python-sphinxcontrib-trio
 Version:	1.0.1
-Release:	1
+Release:	2
 License:	Apache v2.0 or MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/sphinxcontrib-trio/
