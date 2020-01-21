@@ -6,26 +6,31 @@
 Summary:	Make Sphinx better at documenting Python functions and methods
 Summary(pl.UTF-8):	Usprawnienie Sphinksa przy dokumentowaniu funkcji i method w Pythonie
 Name:		python-sphinxcontrib-trio
-Version:	1.0.1
-Release:	2
+Version:	1.1.0
+Release:	1
 License:	Apache v2.0 or MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/sphinxcontrib-trio/
 Source0:	https://files.pythonhosted.org/packages/source/s/sphinxcontrib-trio/sphinxcontrib-trio-%{version}.tar.gz
-# Source0-md5:	f7b3250cadb18a9eeb1eb5e320abf587
+# Source0-md5:	b3ae1f11c0044902d44727d053c776f6
 URL:		https://github.com/python-trio/sphinxcontrib-trio
-BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.714
 BuildRequires:	python3-modules >= 1:3.5
 BuildRequires:	python3-setuptools
 %if %{with tests}
-BuildRequires:	python3-Sphinx
+BuildRequires:	python3-Sphinx >= 1.7
+%if "%{py3_ver}" < "3.6"
+BuildRequires:	python3-async-generator
+%endif
+# optional, for asynccontextmanager test
+#BuildRequires:	python3-contextlib2
 BuildRequires:	python3-cssselect
 BuildRequires:	python3-lxml
 BuildRequires:	python3-pytest
 %endif
+BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with doc}
-BuildRequires:	sphinx-pdg-3
+BuildRequires:	sphinx-pdg-3 >= 1.7
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
