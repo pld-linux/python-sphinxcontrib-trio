@@ -1,0 +1,11 @@
+--- sphinxcontrib-trio-1.1.2/docs/source/conf.py~	2018-08-06 02:42:40.000000000 +0200
++++ sphinxcontrib-trio-1.1.2/docs/source/conf.py	2025-03-14 13:40:26.796652722 +0100
+@@ -38,7 +38,7 @@
+ ]
+ 
+ def setup(app):
+-    app.add_stylesheet("hack.css")
++    app.add_css_file("hack.css")
+ 
+ intersphinx_mapping = {
+     "sphinx": ("http://www.sphinx-doc.org/en/stable/", None),
